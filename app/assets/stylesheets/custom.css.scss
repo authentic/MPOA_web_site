@@ -1,0 +1,41 @@
+$navbarHeight:80px;
+$navbarBackground: #7a8019;
+$sansFontFamily: 'PT Sans', 'DejaVu Sans', 'Bitstream Vera Sans', Verdana, sans-serif;
+@import "bootstrap";
+@import "bootstrap-responsive";
+body {
+  padding-top: 100px;
+  padding-bottom: 40px;
+}
+.sidebar-nav {
+  padding: 9px 0;
+}
+
+.footer {
+  margin-top: 45px;
+  padding: 35px 0 36px;
+  border-top: 1px solid #e5e5e5;
+}
+.footer p {
+  margin-bottom: 0;
+  color: #555;
+}
+@media (max-width: 480px) {
+
+/* Reduce padding above jumbotron */
+  body {
+    padding-top: 70px;}}
+@media (max-width: 768px) {
+
+/* Remove any padding from the body */
+  body {
+    padding-top: 0;
+  }    }
+@media (min-width: 768px) and (max-width: 980px) {
+
+/* Remove any padding from the body */
+  body {
+    padding-top: 0;
+  }
+.sidebar-nav {max-width: 200px;}
+}

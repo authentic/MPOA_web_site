@@ -1,20 +1,68 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <title><%= full_title(yield(:page_title))%></title>
-  <%= stylesheet_link_tag    "application", :media => "all" %>
+  <title><%= full_title(yield(:page_title)) %></title>
+  <%= stylesheet_link_tag "application", :media => "all" %>
   <%= javascript_include_tag "application" %>
   <%= csrf_meta_tags %>
-  <meta http-equiv="content-type" content="text/html; charset=UTF-8"/>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta name="description" content="Massanutten Property Owners Association. A resort community nestled in the heart of the Shenandoah Valley. We have all kinds of sports and recreation going on such as golf, skiing, snow tubing, fishing and many others, all located within the natural beauty of Massanutten Mountain."/>
   <meta name="keywords" content="Massanutten, Property Owners Association, Resort, Lodging, Rentals, Timeshares, Housing, Golfing, Skiing, Mountain, Shenandoah Valley, Vacation, Hiking, Outdoors, Snowtubing, Weekend-Getaway, Great Eastern, Snowboarding, Mountain Biking, Accommodations, Recreation, Virginia Mountains, Virginia Vacations, Harrisonburg, Lodging, Condos"/>
   <meta name="robots" content="index, nofollow"/>
   <meta name="robots" content="noarchive"/>
   <link href='http://fonts.googleapis.com/css?family=PT+Sans:400,700,400italic,700italic' rel='stylesheet' type='text/css'>
+  <!--[if lt IE 9]>
+  <script src="http://html5shim.googlecode.com/svn/trunk/html5.js"></script>
+  <![endif]-->
 </head>
-<body>
+<body  data-spy="scroll" data-target=".subnav" data-offset="50">
 
-<%= yield %>
+<header class="navbar navbar-fixed-top">
+  <div class="navbar-inner">
+    <div class="container-fluid">
+      <nav>  <%= link_to image_tag("MPOALogo.png",:width => 100, :alt => "Massanutten Property Owners Association"), "/" %>
+        <form class="navbar-form pull-right">
+          <input type="text" class="span2">
+        </form>
+        <ul class="nav pull-right">
+          <li><%= link_to "Home", '#' %></li>
+          <li><%= link_to "Help", '#' %></li>
+          <li><%= link_to "Sign in", '#' %></li>
+        </ul>
+
+      </nav>
+    </div>
+  </div>
+</header>
+
+<div class="container-fluid">
+  <div class="row-fluid">
+    <div class="span3">
+      <div class="well sidebar-nav"> <%= image_tag('massanutten-bear-top.png') %>
+        <%= render_navigation :level => 2, :expand_all => true %> <%= image_tag('massanutten-bear-bottom.png') %>
+      </div>
+      <!--/.well -->
+    </div>
+    <div class="span6">  <div class="well"><%= yield %>  </div>
+      <!--/.well -->
+
+    </div>
+    <div class="span3">
+      <div class="well ">
+
+      </div>
+      <!--/.well -->
+    </div>
+  </div>
+  <footer class="footer" >
+        <p> Copyright &copy; 2011-
+          <% t=Time.now %><%= t.year %>. Massanutten Property Owners Association, Inc. All Rights
+          Reserved.
+          <br/>Designed by Hauze.</p>
+  </footer>
+</div>
+
 
 </body>
 </html>
